@@ -1,0 +1,51 @@
+schema: spec-driven
+
+context: |
+  技术栈：Next.js 14 App Router、TypeScript、Supabase（Auth / Postgres / Storage）、OpenAI 兼容 AI 服务。
+  产品模式：移动端 Web 优先，语音优先输入。
+  当前核心链路：录音 -> 上传 -> 服务端 ASR -> 即时回复 -> 线索提取 -> 用户确认 -> 写入结构化记忆。
+  当前核心表：
+  - memories
+  - companion_profiles
+  - memory_facts
+  - memory_events
+  - twin_profiles
+  - twin_versions
+  - twin_bootstrap_sessions
+  - twin_bootstrap_answers
+  关键边界：
+  - 客观记忆层与画像层分离。
+  - facts / events 先确认再入库。
+  - 回忆录是编排层，可编辑，但不直接改画像层。
+  - 每个用户只能拥有一个分身。
+  - 分身先冷启动，再持续成长。
+
+rules:
+  proposal:
+    - 明确此次变更影响哪些表、API 路由和页面。
+    - 明确是否会影响“记忆确认”边界、“一人一分身”边界或“画像层不被客观编辑污染”的边界。
+  design:
+    - 设计中必须写清数据流、确认流、回写流。
+    - 如果涉及 AI 抽取或生成，必须写清失败兜底策略。
+  tasks:
+    - 任务拆分优先按用户可验证的最小闭环来写。
+    - 每个任务尽量能在一次验证中判断是否完成。
+
+# 项目上下文（可选）
+# 在创建工件时向 AI 显示此信息。
+# 添加您的技术栈、约定、风格指南、领域知识等。
+# 示例：
+#   context: |
+#     技术栈：TypeScript, React, Node.js
+#     我们使用约定式提交
+#     领域：电商平台
+
+# 每个工件的规则（可选）
+# 为特定工件添加自定义规则。
+# 示例：
+#   rules:
+#     proposal:
+#       - 保持提案在500字以内
+#       - 始终包含"非目标"部分
+#     tasks:
+#       - 将任务分解为最多2小时的块

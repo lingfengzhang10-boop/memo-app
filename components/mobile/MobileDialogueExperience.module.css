@@ -1,0 +1,430 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  background: #444;
+  padding: 18px 12px;
+}
+
+.phone {
+  position: relative;
+  width: min(100%, 401px);
+  aspect-ratio: 401 / 874;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #1d1c22;
+  box-shadow: 0 18px 61.2px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+.statusBar {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 44px;
+  z-index: 3;
+}
+
+.statusTime {
+  position: absolute;
+  top: 12px;
+  left: 21px;
+  width: 54px;
+  height: 21px;
+}
+
+.statusRight {
+  position: absolute;
+  top: 17px;
+  right: 14px;
+  width: 67px;
+  height: 12px;
+}
+
+.menuButton {
+  position: absolute;
+  top: 66px;
+  left: 25px;
+  z-index: 4;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  align-content: center;
+  gap: 6px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.menuButton span {
+  display: block;
+  height: 2.6px;
+  border-radius: 999px;
+  background: #fff;
+}
+
+.menuButton span:nth-child(1),
+.menuButton span:nth-child(3) {
+  width: 18px;
+}
+
+.menuButton span:nth-child(2) {
+  width: 21px;
+}
+
+.characterButton {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateX(-50%);
+  color: #fff;
+  text-decoration: none;
+}
+
+.characterAvatar {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(111, 154, 255, 0.28), 0 0 18px rgba(75, 125, 255, 0.48);
+  background: radial-gradient(circle at 50% 35%, rgba(132, 184, 255, 0.9), rgba(34, 53, 124, 0.88));
+}
+
+.characterAvatarImage {
+  position: absolute;
+  inset: -20.01% 0 auto 0;
+  width: 100%;
+  height: 185.07%;
+  object-fit: cover;
+}
+
+.characterAvatarImageFallback {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.characterAvatarFallback {
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.characterName {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.replyText {
+  position: absolute;
+  top: 124px;
+  left: 52px;
+  right: 50px;
+  z-index: 3;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.replyTextInteractive {
+  cursor: pointer;
+}
+
+.heroWrap {
+  position: absolute;
+  top: 51px;
+  left: 50%;
+  width: 402px;
+  height: 754px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: -7.02%;
+  width: 114.04%;
+  height: 108.09%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.heroImageFallback {
+  position: absolute;
+  inset: 22% 14% 14%;
+  width: 72%;
+  height: 58%;
+  border-radius: 36px;
+  object-fit: cover;
+  box-shadow: 0 0 34px rgba(75, 132, 255, 0.28);
+}
+
+.heroFallbackCard {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(190, 218, 255, 0.78), rgba(40, 70, 148, 0.9) 44%, rgba(12, 16, 40, 0.92));
+  color: #fff;
+  font-size: 88px;
+  font-weight: 800;
+  text-shadow: 0 0 24px rgba(115, 172, 255, 0.7);
+}
+
+.bottomGlow {
+  position: absolute;
+  left: -55px;
+  bottom: -90px;
+  width: 518px;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.userEcho {
+  position: absolute;
+  left: 52px;
+  right: 50px;
+  bottom: 104px;
+  z-index: 4;
+  margin: 0;
+  min-height: 38px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.inputBackdrop {
+  position: absolute;
+  left: 23px;
+  right: 12px;
+  bottom: 22px;
+  height: 64px;
+  border-radius: 44px;
+  background: #0051ff;
+  box-shadow: inset 0 4px 4px rgba(93, 86, 86, 0.25);
+  z-index: 2;
+}
+
+.inputBar,
+.voiceBar {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  z-index: 3;
+  width: 367px;
+  max-width: calc(100% - 34px);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px 0 16px;
+  transform: translateX(-50%);
+  border-radius: 44px;
+  background: #000;
+  box-shadow:
+    0 7px 20.6px rgba(50, 98, 255, 0.31),
+    inset 0 4px 4px rgba(93, 86, 86, 0.25);
+}
+
+.voiceBar {
+  justify-content: space-between;
+}
+
+.iconButton,
+.sendButton,
+.plusButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.iconButton {
+  width: 24px;
+  height: 24px;
+}
+
+.sendButton,
+.plusButton {
+  width: 26px;
+  height: 26px;
+}
+
+.iconButton img,
+.sendButton img,
+.plusButton img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.iconButtonDisabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.textInput {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.textInput:disabled {
+  opacity: 0.74;
+}
+
+.textInput::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.voiceRecorderWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.voiceRecorderWrap :global(.voice-recorder-compact) {
+  width: 100%;
+}
+
+.voiceRecorderWrap :global(.voice-recorder-compact .recording-button) {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.voiceRecorderWrap :global(.voice-recorder-compact .voice-button-text) {
+  font-family: "PingFang SC", "Noto Sans SC", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.clueOverlay {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 110px;
+  z-index: 5;
+}
+
+.toast {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 98px;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(10, 11, 18, 0.92);
+  border: 1px solid rgba(94, 133, 255, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.toast button {
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: #8cb1ff;
+  font: inherit;
+}
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+}
+
+.sheetBackdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(5, 6, 11, 0.54);
+}
+
+.sheetPanel {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 24px;
+  background: #12131a;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.32);
+}
+
+.sheetTitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.sheetAction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 18px;
+  background: #1a1d27;
+  color: #fff;
+  padding: 14px 16px;
+  font: inherit;
+}
+
+.sheetAction span:last-child {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 12px;
+}
+
+@media (max-width: 430px) {
+  .page {
+    padding: 0;
+  }
+
+  .phone {
+    width: 100vw;
+    border-radius: 0;
+  }
+}
